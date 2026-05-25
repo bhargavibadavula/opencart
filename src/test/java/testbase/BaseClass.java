@@ -12,6 +12,7 @@ import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -39,7 +40,15 @@ public class BaseClass {
 	
 		case "edge"   :
 			System.setProperty("webdriver.edge.driver", "C:\\Users\\rohit\\Downloads\\edgedriver_win64\\msedgedriver.exe");
-			
+			EdgeOptions options = new EdgeOptions();
+
+		    options.addArguments("--headless=new");
+		    options.addArguments("--remote-allow-origins=*");
+		    options.addArguments("--disable-gpu");
+		    options.addArguments("--window-size=1920,1080");
+		    options.addArguments("--no-sandbox");
+		    options.addArguments("--disable-dev-shm-usage");
+
 			driver=new EdgeDriver();break;
 		default :System.out.println("invalid browser");
 		return;
