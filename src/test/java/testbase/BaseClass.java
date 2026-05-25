@@ -43,10 +43,15 @@ public class BaseClass {
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\rohit\\Downloads\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
 
+			
 			options.addArguments("--headless=new");
 			options.addArguments("--disable-gpu");
-			options.addArguments("--no-sandbox");
+			options.addArguments("--window-size=1920,1080");
+			options.addArguments("--remote-allow-origins=*");
 			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--no-sandbox");
+
+			driver = new ChromeDriver(options);
 
 			driver = new ChromeDriver(options);break;
 		default :System.out.println("invalid browser");

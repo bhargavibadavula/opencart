@@ -32,14 +32,12 @@
 	</build>
 
 	<dependencies>
-		<!-- Source:
-		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	
 		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.43.0</version>
-			<scope>compile</scope>
-		</dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.35.0</version>
+</dependency>
 
 		<!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
