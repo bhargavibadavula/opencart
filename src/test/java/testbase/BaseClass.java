@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.BeforeClass;
@@ -36,24 +37,18 @@ public class BaseClass {
 		
 		switch(browser.toLowerCase())
 		{
-		case "chrome" : driver=new ChromeDriver();break;
+		case "edge" : driver=new ChromeDriver();break;
 	
-		case "edge"   :
-			System.setProperty("webdriver.edge.driver", "C:\\Users\\rohit\\Downloads\\edgedriver_win64\\msedgedriver.exe");
-			EdgeOptions options = new EdgeOptions();
-			
+		case "chrome"   :
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\rohit\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
 
-		    options.addArguments("--headless");
-		    options.addArguments("--disable-gpu");
-		    options.addArguments("--window-size=1920,1080");
-		    options.addArguments("--remote-allow-origins=*");
-		    options.addArguments("--no-sandbox");
-		    options.addArguments("--disable-dev-shm-usage");
-		    options.addArguments("--disable-extensions");
-		    options.addArguments("--disable-popup-blocking");
-		    options.addArguments("--disable-infobars");
+			options.addArguments("--headless=new");
+			options.addArguments("--disable-gpu");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
 
-			driver=new EdgeDriver(options);break;
+			driver = new ChromeDriver(options);break;
 		default :System.out.println("invalid browser");
 		return;
 		}
