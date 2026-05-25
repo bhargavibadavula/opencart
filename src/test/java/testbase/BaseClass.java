@@ -41,13 +41,17 @@ public class BaseClass {
 		case "edge"   :
 			System.setProperty("webdriver.edge.driver", "C:\\Users\\rohit\\Downloads\\edgedriver_win64\\msedgedriver.exe");
 			EdgeOptions options = new EdgeOptions();
+			
 
-		    options.addArguments("--headless=new");
-		    options.addArguments("--remote-allow-origins=*");
+		    options.addArguments("--headless");
 		    options.addArguments("--disable-gpu");
 		    options.addArguments("--window-size=1920,1080");
+		    options.addArguments("--remote-allow-origins=*");
 		    options.addArguments("--no-sandbox");
 		    options.addArguments("--disable-dev-shm-usage");
+		    options.addArguments("--disable-extensions");
+		    options.addArguments("--disable-popup-blocking");
+		    options.addArguments("--disable-infobars");
 
 			driver=new EdgeDriver();break;
 		default :System.out.println("invalid browser");
