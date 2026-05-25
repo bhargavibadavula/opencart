@@ -40,7 +40,7 @@ public class BaseClass {
 		case "edge" : driver=new ChromeDriver();break;
 	
 		case "chrome"   :
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\rohit\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\rohit\\Downloads\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
 
 			options.addArguments("--headless=new");
