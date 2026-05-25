@@ -53,7 +53,7 @@ public class BaseClass {
 		    options.addArguments("--disable-popup-blocking");
 		    options.addArguments("--disable-infobars");
 
-			driver=new EdgeDriver();break;
+			driver=new EdgeDriver(options);break;
 		default :System.out.println("invalid browser");
 		return;
 		}
